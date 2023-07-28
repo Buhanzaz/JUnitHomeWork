@@ -35,6 +35,35 @@ public class ReversePolishNotationCalculatorTest {
         assertEquals(answer, testValue, "Ответ при умножении не совпадает");
     }
 
+    @Test
+    public void shouldCalculateAdditions() {
+        int answer = 5;
+        int testValue = calculator.calculatePolishNotation("4 3 2 +");
+
+        assertEquals(answer, testValue, "Ответ при сложении не совпадает");
+    }
+    @Test
+    public void shouldCalculateSubtractions() {
+        int answer = 1;
+        int testValue = calculator.calculatePolishNotation("4 3 2 -");
+
+        assertEquals(answer, testValue, "Ответ при вычитании не совпадает");
+    }
+    @Test
+    public void shouldCalculateMultiplications() {
+        int answer = 6;
+        int testValue = calculator.calculatePolishNotation("4 3 2 *");
+
+        assertEquals(answer, testValue, "Ответ при умножении не совпадает");
+    }
+    @Test
+    public void shouldCalculateSpace() {
+        int answer = 12;
+        int testValue = calculator.calculatePolishNotation("4               3 *");
+
+        assertEquals(answer, testValue, "Ответ при умножении не совпадает");
+    }
+
 
 }
 
